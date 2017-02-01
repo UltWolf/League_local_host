@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block index %}
+<div class = "row" >
+  <div class="small-12 large-8 columns">
+  
+ <div class="fotorama"  data-thumbBorderColor="#333333" data-background="#FFFFFF" data-caption="overlay" data-thumbBorderWidth="1" data-width="700" data-height="400">
+ <img src="{%  static '3.jpg'%}">
+ <a href="{%  static '2.jpg'%}" data-thumb="1_thumb.jpg" >Вы говорите,что я имба? Так и есть!"</a>
+  <a href="{%  static '1.jpg'%}" data-thumb="2_thumb.jpg">"Самый сильный мускул - это сердце!"</a>
+
+
+</div>
+</div>
+
+
+<div class="small-11 large-4 columns">
+<div class ="hot">
+<p class = "hot-head">Горячий комментарий</p>
+
+<h6 class = "hot-comment">За Ясуо играют только пидоры. И Внук. Да, пидоры и внук</h6>
+</div>
+</div>
+
+</div>
+
+
+<div class="row">
+<div class="small-6 large-8 columns">
+<div class ="freepick">
+<img src="{%  static 'freepick.png'%}">
+<p class ="downtab" align="center">Свободный пик недели!</p>
+</div>
+</div>
+<div class="small-6 large-4 columns">
+<div class ="socialtab">
+<button ><img src="{%  static 'vk.png'%}" class = "social"></button>
+<button ><img src="{%  static 'ub.png'%}" class = "social"></button>
+<button><img src="{%  static 'twitch.png'%}" class = "social" ></button>
+<p class="downtab" align="center">Контакты</p>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="small-4 large-4 columns">
+<div  class="guides">
+<p class = "newguides" align="center"> Горячие гайды</p>
+<img src="{%  static 'guides.png'%}">
+</div>
+</div>
+<div class="small-4 large-4 columns">
+<div  class="guides">
+<p class = "newguides" align="center"> Новые гайды</p>
+<img src="{%  static 'guides.png'%}">
+</div>
+</div>
+<div class="small-4 large-4 columns">
+<div  class="guides">
+<p class = "newguides" align="center">Рекомендуемые гайды</p>
+<img src="{%  static 'guides.png'%}">
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

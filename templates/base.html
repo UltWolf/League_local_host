@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+      {% load  static %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>League of guides</title>
+   <!--include Jquery-->
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!--Include Foundation-->
+<link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.css">
+    <!--My css-->
+
+     <!--Include Foundation-->
+<link href="{% static 'http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css'%}" rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Rationale' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+  </head>
+  <body>
+
+  <div class ="title-bar" data-responsive-toggle="headerM" data-hide-for="medium" id="title">
+  <button class="menu-icon" type="button" data-toggle></button>
+  <div class ="title bar title-bar-right">League of Guides </div>
+  </div>
+
+  <div class ="top-bar" id ="headerM">
+  <ul class="menu vertical medium-horizontal  expanded medium-text-center" data-responsive-menu="drilldown medium-dropdown" id ="dropdown">
+  <li class="has-submenu"><a href="#" id="begin">Гайды</a>
+     <ul class = "submenu menu vertical" data submenu id="box">
+    <li><a href="/articles/all/" >Гайды на чемпионов</a></li>
+     <li><a href="#" >Гайды на чемпионов</a></li>
+     <li><a href="#" >Гайды на чемпионов</a></li>
+    </ul>
+    </li>
+     <li ><a href="/index/" id="middle">Главная</a></li>
+     </li>
+    <li ><a href="#" id="middle">Контакты</a></li>
+     <li class="has-submenu"><a href="#" id="middle">Медиа</a>
+     <ul class = "submenu menu  vertical" data submenu id="box">
+     <li><a href="#" >Гайды на чемпионов</a></li>
+     <li><a href="#" >Гайды на чемпионов</a></li>
+     <li><a href="#" >Гайды на чемпионов</a></li>
+     </ul>
+     </li>
+      <li><a href="" id="middle">Скачать</a></li>
+      {% if username %}
+            <li><a href="#"  id="end"  data-open="registration" tabindex="0" aria-controls="registration" aria-haspopup="true" >Профиль {{ username }}</a> </li>
+           {% else %}
+        <li> <a href="/auth/login/"   id="end"  data-open="registration" tabindex="0" aria-controls="registration" aria-haspopup="true"> Войти\Регистрация </a> </li>
+           {% endif %}
+       </ul>
+     </div>
+
+
+<div class="background" >
+  <img src="{% static 'background.png'%}" >
+  <div class='message_load'>
+<p> Сайт в данный момент разрабатывается:</p>
+<p> Сайт готов на 10%</p>
+<progress max="100" value="10"></progress>
+</div>
+
+</div>
+
+<div class='head'>
+ <div class="row column">
+
+
+<div class="top-bar-right">
+<ul class="menu">
+<li><input type="search" placeholder="Поиск"></li>
+
+</ul>
+</div>
+</div>
+
+
+</div>
+
+<div class= "content">
+  {% block  index %}{%  endblock %}
+  {% block login %}{% endblock %}
+{% block article %}{% endblock %}
+ </div>
+<div class='foot'>
+ <div class="row column">
+
+
+<div class="top-bar-right">
+<ul class="menu">
+<li><p>Copyright|2017</p></li>
+
+</ul>
+</div>
+</div>
+</div>
+<div class ="footbg">
+<div class="row column">
+<p class='black'>Не баг, а фича</p>
+</div>
+</div>
+
+
+    <!-- /.container -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script>
+
+    <!--Include $-->
+    <script src="D:\ALL_projects\js_library\jquery.js"></script>
+    <!--slider-->
+
+    <!--Include Foundation-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script>
+      $(document).foundation();
+    </script>
+<script type="text/javascript" src="{% static 'https://intercom.zurb.com/scripts/zcom.js' %}"></script>
+<a class="out_link" href="http://fotorama.s3.amazonaws.com/4.4.7/fotorama-4.4.7.zip">
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block login %}
+
+ <div > <p align="center" id ="form">Введите ваши данные:</p>
+     <form action="/auth/login/" method="post">
+            {% csrf_token %}
+            <label for="username">Имя пользователя</label>
+            <input type="text" name="username" id="username"><br>
+            <label for="password">Пароль</label>
+            <input type="password" name="password" id="password">
+            {% if login_error %}
+                <label class="error">{{ login_error }}</label>
+            {% endif %}
+            <input class="button"  id = 'yes' type="submit" value="Войти"><br>
+            <div ><a href="/auth/register/" id = "no" >Регистрация</a></div>
+     </form>
+    </div>
+
+{% endblock %}
