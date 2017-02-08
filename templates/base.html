@@ -31,9 +31,9 @@
   <ul class="menu vertical medium-horizontal  expanded medium-text-center" data-responsive-menu="drilldown medium-dropdown" id ="dropdown">
   <li class="has-submenu"><a href="#" id="begin">Гайды</a>
      <ul class = "submenu menu vertical" data submenu id="box">
-    <li><a href="/articles/all/" >Гайды на чемпионов</a></li>
-     <li><a href="#" >Гайды на чемпионов</a></li>
-     <li><a href="#" >Гайды на чемпионов</a></li>
+    <li><a href="/articles/" >Гайды на чемпионов</a></li>
+     <li><a href="#" >Гайды по общей игре</a></li>
+     <li><a href='/articles/addArticle/'  >Создать гайд</a></li>
     </ul>
     </li>
      <li ><a href="/index/" id="middle">Главная</a></li>
@@ -85,6 +85,7 @@
   {% block  index %}{%  endblock %}
   {% block login %}{% endblock %}
 {% block article %}{% endblock %}
+{% block add_article %}{% endblock %}
  </div>
 <div class='foot'>
  <div class="row column">
@@ -119,6 +120,6 @@
       $(document).foundation();
     </script>
 <script type="text/javascript" src="{% static 'https://intercom.zurb.com/scripts/zcom.js' %}"></script>
-<a class="out_link" href="http://fotorama.s3.amazonaws.com/4.4.7/fotorama-4.4.7.zip">
+
   </body>
 </html>

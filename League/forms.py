@@ -5,3 +5,4 @@ from models import Comments
 class CommentForm(ModelForm):
     model = Comments
     fields = ['comments_text']
+

@@ -8,6 +8,9 @@
             <input type="text" name="username" id="username"><br>
             <label for="password">Пароль</label>
             <input type="password" name="password" id="password">
+             <label for="birthday_day">Дата рождения:</label>
+            <input type="date" name="username" id="birthday_day"><br>
+
             {% if login_error %}
                 <label class="error">{{ login_error }}</label>
             {% endif %}
