@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import Comments,Article, Champion
+from .models import Comments,Article, Champion
 
 
 class LeagueInline(admin.StackedInline):
@@ -8,7 +8,7 @@ class LeagueInline(admin.StackedInline):
 
 
 class LeagueAdmin(admin.ModelAdmin):
-    fields = ['title_article', 'author', 'title_text', 'data_time', 'champion_name']
+    fields = ['title_article', 'title_text', 'data_time','champion']
     inlines = [LeagueInline]
 
 class Champions(admin.ModelAdmin):

@@ -33,7 +33,7 @@
      <ul class = "submenu menu vertical" data submenu id="box">
     <li><a href="/articles/" >Гайды на чемпионов</a></li>
      <li><a href="#" >Гайды по общей игре</a></li>
-     <li><a href='/articles/addArticle/'  >Создать гайд</a></li>
+     <li><a href='/articles/addArticle/'>Создать гайд</a></li>
     </ul>
     </li>
      <li ><a href="/index/" id="middle">Главная</a></li>
@@ -48,7 +48,7 @@
      </li>
       <li><a href="" id="middle">Скачать</a></li>
       {% if username %}
-            <li><a href="#"  id="end"  data-open="registration" tabindex="0" aria-controls="registration" aria-haspopup="true" >Профиль {{ username }}</a> </li>
+            <li><a href="/auth/profile/"  id="end"  data-open="registration" tabindex="0" aria-controls="registration" aria-haspopup="true" >Профиль {{ username }}</a> </li>
            {% else %}
         <li> <a href="/auth/login/"   id="end"  data-open="registration" tabindex="0" aria-controls="registration" aria-haspopup="true"> Войти\Регистрация </a> </li>
            {% endif %}
@@ -57,7 +57,7 @@
 
 
 <div class="background" >
-  <img src="{% static 'background.png'%}" >
+  <img src="{% static 'background.png' %}" >
   <div class='message_load'>
 <p> Сайт в данный момент разрабатывается:</p>
 <p> Сайт готов на 10%</p>
@@ -86,6 +86,7 @@
   {% block login %}{% endblock %}
 {% block article %}{% endblock %}
 {% block add_article %}{% endblock %}
+{% block profile %}{% endblock %}
  </div>
 <div class='foot'>
  <div class="row column">

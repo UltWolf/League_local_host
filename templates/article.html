@@ -2,11 +2,14 @@
 {% block article %}
 
     <h4>{{ article.article_date }}</h4>
-    <h2>{{ article.article_title }}</h2>
-    <p>{{ article.article_text }}</p>
+
+
+    <h2>{{ article.title_article }}</h2>
+    <p>{{ article.title_text }}</p>
     <p>{{ article.article_likes }}</p>
-{% for comment in comments  %}
     <p>Комментарии : </p><br>
+{% for comment in comments  %}
+
   {{ comment.comments_text }}
 {% endfor %}
     <form action="/articles/addcomment/{{ article.id }}/" method="post">

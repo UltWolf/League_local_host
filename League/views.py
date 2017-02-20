@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse, Http404
-
+from  django.template.loader import get_template
 from django.core.urlresolvers import reverse_lazy
-from django.shortcuts import render_to_response,redirect
-from League.models import Article, Comments,Champion
+from django.shortcuts import render_to_response, redirect
+from League.models import Article, Comments, Champion
 from django.core.exceptions import ObjectDoesNotExist
-from forms import CommentForm
+from .forms import CommentForm, ArticleForm
 from django.template.context_processors import csrf
-from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib import auth
 
 
@@ -16,7 +16,8 @@ def index(request):
 
 
 def articles(request):
-    return render_to_response('articles.html', {'articles': Article.objects.all(), 'Champions': Champion.objects.all(), 'username': auth.get_user(request).username})
+    return render_to_response('articles.html',
+                              {'articles': Article.objects.all(), 'username': auth.get_user(request).username})
 
 
 def article(request, article_id=1):
@@ -55,12 +56,25 @@ def addcomment(request, article_id):
             form.save()
             request.session.set_expiry(60)
             request.session['pause'] = True
+
     return redirect('/articles/get/%s/' % article_id)
 
 
-class ArticleCreate(CreateView):
-    model = Article
-    fields = ['title_article', 'author', 'title_text', 'data_time', 'champion_name' ]
+def addarticle(request):
+    if request.POST and request.COOKIES:
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            args = {}
+            args.update(csrf(request))
+            args['username'] = auth.get_user(request).username
+            form.save(commit=True)
+            request.session.set_expiry(60)
+            request.session['pause'] = True
+            return redirect('/articles/')
+
+    else:
+        form = ArticleForm
+    return render(request, 'addArticle.html', {'form': form, 'username': auth.get_user(request).username})
 
 
 class ArticleUpdate(UpdateView):

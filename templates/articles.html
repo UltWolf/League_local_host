@@ -5,21 +5,23 @@
     <div class="list_guid">
     <h2>  {{    article.title_article }}</h2>
     <h6>Дата Публикации:{{ article.article_date }}</h6>
-
-    <h4><a href="/articles/get/{{ article.id }}">{{ article.article_title }}</a></h4>
+    <h4><a href="/articles/get/{{ article.id }}/">Перейти к статье</a></h4>
     <p class="guid">{{ article.title_text }}</p>
-    {% for champion in Champions %}
-          {% if champions.face %}
-             <img src="{{ MEDIA_URL }}{{ Champion.face.url }}">
-              <img src="{{ MEDIA_URL }}{{ Champion.face }}">
-                   <p>Картинка загружена,но не отображается</p>
-              {% else %}
-              <p>Картинка не загружена</p>
-              <img src="{{ MEDIA_URL }}{{ Champion.face.url }}">
-              <img src="{{ MEDIA_URL }}{{ Champion.face }}">
+            {% if  champion_name %}
+                <p> Связь есть</p>
+                {% else  %}
+                 <p> Связи нет</p>
+    {% endif %}
 
-        {% endif %}
-        {% endfor %}
+
+<img src="{{ article.champion.face.url}}" alt="My image"/>
+
+                   <p>Картинка загружена,но не отображается</p>
+
+              <p>Картинка не загружена</p>
+
+                <p>Жизнь- тлен</p>
+
   <p><a href="/articles/addlike/{{ article.id }}/">{{ article.article_likes }}<img src="{% static 'images.jpg' %}" height="25px" width="25px"></a> Автор:{{ article.author }} </p>
     </div>
      <hr>
